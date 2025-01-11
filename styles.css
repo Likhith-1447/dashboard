@@ -101,10 +101,8 @@ nav {
     color: #f4c7ba;
 }
 
-
-/* Main Content */
 main {
-    height: calc(100vh - 60px); /* Adjusted to match nav height */
+    height: calc(100vh - 60px); 
     padding: 1.5rem;
     overflow-y: auto;
 }
@@ -114,7 +112,7 @@ main {
     gap: 1.5rem;
     max-width: 1600px;
     margin: 0 auto;
-    padding-bottom: 2rem; /* Add bottom padding */
+    padding-bottom: 2rem; 
 }
 
 .left-panel {
@@ -122,7 +120,6 @@ main {
     flex-shrink: 0;
 }
 
-/* Update the result summary styles */
 .result-header {
     text-align: center;
     margin-bottom: 1.5rem;
@@ -472,7 +469,6 @@ main {
     color: #ef4444;
 }
 
-/* Approach Data Styles */
 .approach-stats {
     display: flex;
     flex-direction: column;
@@ -500,7 +496,6 @@ main {
     font-size: 0.875rem;
 }
 
-/* Suggestions Styles */
 .time-suggestions {
     display: flex;
     flex-direction: column;
@@ -580,20 +575,18 @@ main {
     font-size: 0.75rem;
 }
 
-/* Static Chart Styles */
-/* Update the Static Chart Styles */
 .static-chart {
     position: relative;
     height: 250px;
     margin-top: 2rem;
-    margin-bottom: 3rem; /* Added bottom margin */
+    margin-bottom: 3rem; 
     padding-left: 3rem;
 }
 
 .chart-container {
     background: white;
     border-radius: 0.75rem;
-    padding: 1.5rem 1.5rem 2.5rem 1.5rem; /* Increased bottom padding */
+    padding: 1.5rem 1.5rem 2.5rem 1.5rem; 
 }
 
 
@@ -613,19 +606,18 @@ main {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    padding-bottom: 2.5rem; /* Increased from 2rem */
+    padding-bottom: 2.5rem; 
 }
 
 .bar span {
     position: absolute;
-    bottom: -2rem; /* Increased from -1.5rem */
+    bottom: -2rem; 
     left: 50%;
     transform: translateX(-50%);
     color: #6b7280;
     font-size: 0.75rem;
 }
 
-/* Update chart container padding */
 
 
 .y-axis {
