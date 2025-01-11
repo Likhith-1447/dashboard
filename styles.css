@@ -1,0 +1,730 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    height: 100vh;
+    overflow: auto;
+}
+
+nav {
+    background-color: #1e2837;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+}
+
+.logo i {
+    font-size: 1.5rem;
+    color: #4fd1c5;
+}
+
+.logo span {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #9ca3af;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s;
+    font-size: 0.875rem;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    color: rgb(17, 171, 173);
+}
+
+.nav-item i {
+    font-size: 1rem;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-right i {
+    color: #9ca3af;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.nav-right i:hover {
+    color: white;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: rgba(244, 199, 186, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    cursor: pointer;
+}
+
+.profile i,
+.profile span {
+    color: #f4c7ba;
+}
+
+
+/* Main Content */
+main {
+    height: calc(100vh - 60px); /* Adjusted to match nav height */
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.dashboard-container {
+    display: flex;
+    gap: 1.5rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-bottom: 2rem; /* Add bottom padding */
+}
+
+.left-panel {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+/* Update the result summary styles */
+.result-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.result-icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+}
+
+.result-header h3 {
+    color: #4338ca;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.result-header p {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.score-card {
+    background-color: #f3f4f6;
+    padding: 2rem 1rem 1rem;
+    margin: 1.5rem 0;
+    border-radius: 0.75rem;
+    position: relative;
+    text-align: center;
+}
+
+.passed-badge {
+    position: absolute;
+    top: -0.75rem;
+    left: 1rem;
+    background: #4338ca;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.score-icon {
+    width: 48px;
+    height: 48px;
+    background: #e0e7ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.score-icon i {
+    font-size: 1.5rem;
+    color: #4338ca;
+}
+
+.accuracy-badge {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background: #10b981;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+}
+
+.top-score {
+    background-color: #f3f4f6;
+    padding: 2rem 1rem 1rem;
+    margin: 1.5rem 0;
+    border-radius: 0.75rem;
+    position: relative;
+    text-align: center;
+}
+
+.top-score-badge {
+    position: absolute;
+    top: -0.75rem;
+    left: 1rem;
+    background: #f3f4f6;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    color: #4b5563;
+}
+
+.profile-image {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #e0e7ff;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.practice-btn {
+    background-color: #4f46e5;
+    color: white;
+    padding: 0.75rem;
+    width: 100%;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.practice-btn:hover {
+    background-color: #4338ca;
+}
+
+.visit-btn {
+    background-color: #4f46e5;
+    color:#f2f1f6;
+    padding: 0.75rem;
+    width: 100%;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 1rem 0;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.visit-btn:hover {
+    background-color: #4338ca;
+}
+
+.instructions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6b7280;
+    font-size: 0.75rem;
+}
+
+.instructions::before {
+    content: "ⓘ";
+    color: #9ca3af;
+}
+.revisit-paper {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+}
+
+.revisit-paper h4 {
+    color: #1f2937;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.revisit-paper p {
+    color: #6b7280;
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+.result-summary, .revisit-paper {
+    margin-bottom: 20px;
+  }
+  
+  .result-summary h3 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .score-card, .top-score {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .practice-btn {
+    background-color: #6a5acd;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+  }
+  
+
+  .right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.top-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    height: 160px; /* Reduced height */
+    margin-bottom: 1.5rem;
+}
+
+.box {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.box h4 {
+    color: #1f2937;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.box-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.middle-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+.improve-marks {
+    margin: 1.5rem 0;
+}
+
+.improve-marks h4 {
+    color: #1f2937;
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+}
+
+.improve-marks p {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.improvement, .response-time, .approach-data, .suggestions {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+}
+
+.card-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-icon i {
+    font-size: 1.25rem;
+    color: #4338ca;
+}
+
+.card-icon h4 {
+    color: #1f2937;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.tags span {
+    background: #e5e7eb;
+    color: #4b5563;
+    padding: 0.375rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+}
+
+/* Response Time Styles */
+.time-info {
+    margin: 1rem 0;
+}
+
+.time-badge {
+    display: inline-block;
+    background: #818cf8;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.percentage {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    color: #1f2937;
+}
+
+.percentage span {
+    font-weight: 600;
+}
+
+.time {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.time i {
+    color: #ef4444;
+    font-size: 0.875rem;
+}
+
+.warning {
+    color: #6b7280;
+    margin-top: 0.75rem;
+}
+
+.warning span {
+    color: #ef4444;
+}
+
+/* Approach Data Styles */
+.approach-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: #f3f4f6;
+    border-radius: 0.5rem;
+}
+
+.stat-item .percentage {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4338ca;
+    min-width: 3rem;
+}
+
+.stat-item .label {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+/* Suggestions Styles */
+.time-suggestions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.time-tag {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    background: #f3f4f6;
+}
+
+.time-tag span {
+    font-weight: 600;
+}
+
+.time-tag.easy .difficulty {
+    color: #10b981;
+}
+
+.time-tag.medium .difficulty {
+    color: #f59e0b;
+}
+
+.time-tag.hard .difficulty {
+    color: #ef4444;
+}
+
+.bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem; 
+}
+
+.time-taken-container {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.time-ruler-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.chart-container h3, .time-taken-container h3 {
+    color: #1f2937;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.time-markers {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.time-markers span {
+    background: #e5e7eb;
+    color: #6b7280;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+}
+
+/* Static Chart Styles */
+/* Update the Static Chart Styles */
+.static-chart {
+    position: relative;
+    height: 250px;
+    margin-top: 2rem;
+    margin-bottom: 3rem; /* Added bottom margin */
+    padding-left: 3rem;
+}
+
+.chart-container {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem 1.5rem 2.5rem 1.5rem; /* Increased bottom padding */
+}
+
+
+.chart-grid {
+    position: absolute;
+    top: 0;
+    left: 3rem;
+    right: 0;
+    bottom: 2.5rem; /* Increased from 2rem */
+    border-left: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.bars {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-bottom: 2.5rem; /* Increased from 2rem */
+}
+
+.bar span {
+    position: absolute;
+    bottom: -2rem; /* Increased from -1.5rem */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #6b7280;
+    font-size: 0.75rem;
+}
+
+/* Update chart container padding */
+
+
+.y-axis {
+    position: absolute;
+    left: -3rem;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.y-axis span {
+    color: #6b7280;
+    font-size: 0.75rem;
+    transform: translateY(50%);
+}
+
+.grid-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(#e5e7eb 1px, transparent 1px);
+    background-size: 100% 25%;
+}
+
+
+
+.bar {
+    width: 20px;
+    background-color: #818cf8;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+}
+
+
+
+
+.time-ruler {
+    position: relative;
+    height: 8px;
+    background: #f3f4f6;
+    border-radius: 4px;
+    margin: 2rem 0;
+}
+
+.ruler-marks {
+    position: absolute;
+    top: -1.5rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.ruler-marks span {
+    color: #6b7280;
+    font-size: 0.75rem;
+    transform: translateX(-50%);
+}
+
+.progress-bar {
+    position: relative;
+    height: 100%;
+}
+
+.green-bar {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 40%;
+    background: #10b981;
+    border-radius: 4px;
+}
+
+.red-bar {
+    position: absolute;
+    left: 40%;
+    height: 100%;
+    width: 30%;
+    background: #ef4444;
+    border-radius: 4px;
+}
+
+.slider {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 24px;
+    background: #4338ca;
+    border-radius: 2px;
+}
+
+.ruler-description {
+    color: #6b7280;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    margin: 0.5rem 0;
+}
